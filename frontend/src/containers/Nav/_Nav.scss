@@ -1,0 +1,21 @@
+nav {
+  @include flex-center;
+  margin-right: 0.65rem;
+  ul {
+    display: flex;
+    li {
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
+      a {
+        @include flex-center;
+        img {
+          margin-right: 0.3rem;
+          position: relative;
+          bottom: 1px;
+        }
+      }
+    }
+  }
+}

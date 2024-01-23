@@ -1,0 +1,85 @@
+main {
+  .hero {
+    height: 300px;
+    background-image: url("/imgs/bank-tree_425_283.webp");
+    background-position: 0 -50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 0 1rem;
+
+    @media only screen and (min-width: 920px) {
+      height: 400px;
+      background-image: url("/imgs/bank-tree_1650_1100.webp");
+      background-position: 0% 33%;
+    }
+    .hero-content {
+      position: relative;
+      top: 2rem;
+      max-width: 16.5rem;
+      background: $color_bg_main;
+      padding: 2rem;
+      text-align: left;
+      margin: 0 auto;
+      .subtitle {
+        font-weight: bold;
+        font-size: 1rem;
+        margin: 0;
+      }
+      .text {
+        margin-bottom: 0;
+        font-size: 0.9rem;
+      }
+      p {
+        margin-top: 0.9rem;
+      }
+      @media only screen and (min-width: 920px) {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        max-width: 22.75rem;
+        margin: 2rem;
+
+        .subtitle {
+          font-size: 1.5rem;
+        }
+        .text {
+          font-size: 1.2rem;
+        }
+        p {
+          margin-top: 1.2rem;
+        }
+      }
+    }
+  }
+  .features {
+    @include flex-column;
+
+    .feature-icon {
+      border: 10px solid $color_primary;
+      border-radius: 50%;
+      width: 152px;
+      height: 152px;
+      margin: 0 auto;
+      @include flex-center;
+    }
+
+    .feature-item {
+      text-align: center;
+      flex: 1;
+      padding: 2.5rem;
+    }
+
+    .feature-item-title {
+      color: #222;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 920px) {
+      flex-direction: row;
+    }
+  }
+}
