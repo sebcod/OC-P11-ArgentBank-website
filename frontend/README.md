@@ -1,9 +1,17 @@
 # Frontend ArgentBank
 
-## npm install
+```bash
+npm install
+```
 
-## npm run dev
+```bash
+npm run dev
+```
 
-## npm run test
+```bash
+npm run test
+```
 
-## npm run test:ui
+```bash
+npm run test:ui
+```

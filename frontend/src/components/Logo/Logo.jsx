@@ -1,6 +1,8 @@
+import { NavLink } from "react-router-dom";
+
 const Logo = () => (
   <div className="logo">
-    <a href="./index.html">
+    <NavLink to={"/"}>
       <img
         width={199}
         height={54}
@@ -9,7 +11,7 @@ const Logo = () => (
         alt="Argent Bank Logo"
       />
       <h1 className="sr-only">Argent Bank</h1>
-    </a>
+    </NavLink>
   </div>
 );
 

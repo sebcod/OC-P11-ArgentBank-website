@@ -7,7 +7,9 @@ h4,
 h5,
 h6,
 p,
-span {
+span,
+label,
+input {
   font-family: $Font_text;
   color: $color_text_noir;
 }

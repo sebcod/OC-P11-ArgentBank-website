@@ -5,6 +5,7 @@ import Footer from "./Footer";
 describe("When Footer is created", () => {
   it("footer text is displayed", async () => {
     render(<Footer />);
+    await screen.findByRole("contentinfo");
     await screen.findByText("Copyright 2020 Argent Bank");
   });
 });
