@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import Logo from "../../components/Logo/Logo";
+import { useNavigate } from "react-router-dom";
 import Header from "../../containers/Header/Header";
 import Main from "../../containers/Main/Main";
-import Nav from "../../containers/Nav/Nav";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -45,7 +43,7 @@ const Login = () => {
               ? sessionStorage.setItem("argentbank", res_json.body.token)
               : localStorage.setItem("argentbank", res_json.body.token);
             // redirection sur la page user
-            navigate("/Profile");
+            navigate("/profile");
           } else {
             // si pas de token, affichage d'un message d'erreur
             setShowError(true);
@@ -68,21 +66,7 @@ const Login = () => {
 
   return (
     <>
-      <Header>
-        <Logo />
-        <Nav>
-          <li>
-            <NavLink to={"/login"}>
-              <img
-                src="../src/svgs/user-circle-solid.svg"
-                width={16}
-                height={16}
-              />
-              <span>Login</span>
-            </NavLink>
-          </li>
-        </Nav>
-      </Header>
+      <Header />
       <Main>
         <div className="containerMainSignIn">
           <section className="sign-in-content">
@@ -99,7 +83,7 @@ const Login = () => {
             )}
             <form onSubmit={handleSubmit}>
               <div className="input-wrapper">
-                <label htmlFor="username">Email</label>
+                <label htmlFor="email">Email</label>
                 <input
                   onChange={onchangeName}
                   type="email"

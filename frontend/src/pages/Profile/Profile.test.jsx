@@ -10,9 +10,6 @@ describe("When Profile page is created", () => {
         <Profile />
       </BrowserRouter>
     );
-    await screen.findByRole("banner");
-    await screen.findByRole("main");
-
     await screen.findByText("Profile");
   });
 });

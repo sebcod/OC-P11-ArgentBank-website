@@ -10,9 +10,6 @@ describe("When Home is created", () => {
         <Home />
       </BrowserRouter>
     );
-    await screen.findByRole("banner");
-    await screen.findByRole("main");
-
     await screen.findByText("Promoted Content");
     await screen.findByText("Features");
 

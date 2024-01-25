@@ -1,16 +1,33 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { describe, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import Logo from "./Logo";
 
-describe("When Logo is created", () => {
-  it("H1 logo is displayed", async () => {
+describe("Logo Component", () => {
+  it("renders logo component", () => {
     render(
       <BrowserRouter>
         <Logo />
       </BrowserRouter>
     );
 
-    await screen.findByText("Argent Bank");
+    screen.getByAltText("Argent Bank Logo");
+    screen.getByRole("img");
+  });
+
+  it("redirects to home on logo click", async () => {
+    const { container } = render(
+      <BrowserRouter>
+        <Logo />
+      </BrowserRouter>
+    );
+
+    const logoLink = container.querySelector(".logo");
+
+    fireEvent.click(logoLink);
+
+    await waitFor(() => {
+      expect(window.location.pathname).toBe("/");
+    });
   });
 });

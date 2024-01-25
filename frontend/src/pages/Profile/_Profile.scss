@@ -1,2 +1,11 @@
 main {
+  .containerMainProfile {
+    text-align: center;
+    flex: 1;
+    background-color: $color_bg_secondary;
+    @include flex-column-center;
+    p {
+      color: $color_text_white;
+    }
+  }
 }

@@ -1,12 +1,36 @@
 import { useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import Logo from "../../components/Logo/Logo";
+import { useNavigate } from "react-router-dom";
+import FeatureItem from "../../components/FeatureItem/FeatureItem";
 import Header from "../../containers/Header/Header";
 import Main from "../../containers/Main/Main";
-import Nav from "../../containers/Nav/Nav";
 
 const Home = () => {
   const navigate = useNavigate();
+
+  const featureItems = [
+    {
+      img: "../src/imgs/icon-chat_100_100.webp",
+      alt: "Chat Icon",
+      title: "You are our #1 priority",
+      description:
+        "Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes.",
+    },
+    {
+      img: "../src/imgs/icon-money_100_100.webp",
+      alt: "Rates Icon",
+      title: "More savings means higher rates",
+      description:
+        "The more you save with us, the higher your interest rate will be!",
+    },
+    {
+      img: "../src/imgs/icon-security_100_100.webp",
+      alt: "Security Icon",
+      title: "Security you can trust",
+      description:
+        "We use top of the line encryption to make sure your data and money is always safe.",
+    },
+  ];
+
   useEffect(() => {
     if (
       sessionStorage.getItem("argentbank") ||
@@ -17,21 +41,7 @@ const Home = () => {
   }, [navigate]);
   return (
     <>
-      <Header>
-        <Logo />
-        <Nav>
-          <li>
-            <NavLink to={"/login"}>
-              <img
-                src="../src/svgs/user-circle-solid.svg"
-                width={16}
-                height={16}
-              />
-              <span>Login</span>
-            </NavLink>
-          </li>
-        </Nav>
-      </Header>
+      <Header />
       <Main>
         <div className="hero">
           <section className="hero-content">
@@ -44,56 +54,12 @@ const Home = () => {
             </p>
           </section>
         </div>
+
         <section className="features">
           <h2 className="sr-only">Features</h2>
-          <div className="feature-item">
-            <div className="feature-icon">
-              <img
-                src="../src/imgs/icon-chat_100_100.webp"
-                alt="Chat Icon"
-                width={100}
-                height={100}
-              />
-            </div>
-            <h3 className="feature-item-title">You are our #1 priority</h3>
-            <p>
-              Need to talk to a representative? You can get in touch through our
-              24/7 chat or through a phone call in less than 5 minutes.
-            </p>
-          </div>
-          <div className="feature-item">
-            <div className="feature-icon">
-              <img
-                src="../src/imgs/icon-money_100_100.webp"
-                alt="Chat Icon"
-                width={100}
-                height={100}
-              />
-            </div>
-
-            <h3 className="feature-item-title">
-              More savings means higher rates
-            </h3>
-            <p>
-              The more you save with us, the higher your interest rate will be!
-            </p>
-          </div>
-          <div className="feature-item">
-            <div className="feature-icon">
-              <img
-                src="../src/imgs/icon-security_100_100.webp"
-                alt="Chat Icon"
-                width={100}
-                height={100}
-              />
-            </div>
-
-            <h3 className="feature-item-title">Security you can trust</h3>
-            <p>
-              We use top of the line encryption to make sure your data and money
-              is always safe.
-            </p>
-          </div>
+          {featureItems?.map((item, index) => (
+            <FeatureItem key={index} item={item} />
+          ))}
         </section>
       </Main>
     </>

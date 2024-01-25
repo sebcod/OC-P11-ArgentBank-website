@@ -1,9 +1,11 @@
-import PropTypes from "prop-types";
+import Logo from "../../components/Logo/Logo";
+import Nav from "../Nav/Nav";
 
-const Header = ({ children }) => <header>{children}</header>;
-
-Header.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+const Header = () => (
+  <header>
+    <Logo />
+    <Nav />
+  </header>
+);
 
 export default Header;

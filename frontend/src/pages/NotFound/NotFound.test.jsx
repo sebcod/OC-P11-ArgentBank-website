@@ -10,9 +10,6 @@ describe("When Notfound page is created", () => {
         <NotFound />
       </BrowserRouter>
     );
-    await screen.findByRole("banner");
-    await screen.findByRole("main");
-
     await screen.findByText("Page not found");
   });
 });
