@@ -6,13 +6,13 @@ import Main from "../../containers/Main/Main";
 const Login = () => {
   const navigate = useNavigate();
 
-  const [userName, setUserName] = useState("");
+  const [setUserEmail, setUserEmailsetUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [remenberMe, setRememberMe] = useState(false);
   const [showError, setShowError] = useState(false);
 
   const onchangeName = (e) => {
-    setUserName(e.target.value);
+    setUserEmailsetUserEmail(e.target.value);
   };
   const onchangePassword = (e) => {
     setUserPassword(e.target.value);
@@ -31,7 +31,7 @@ const Login = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: userName,
+          email: setUserEmail,
           password: userPassword,
         }),
       })

@@ -4,12 +4,13 @@ import { describe, it } from "vitest";
 import Profile from "./Profile";
 
 describe("When Profile page is created", () => {
-  it("header, main is displayed", async () => {
+  it("profile message is displayed", async () => {
     render(
       <BrowserRouter>
         <Profile />
       </BrowserRouter>
     );
-    await screen.findByText("Profile");
+
+    screen.getByText(/Welcome back/i);
   });
 });

@@ -1,0 +1,48 @@
+.account {
+  @include flex-between;
+  align-items: center;
+  border: 1px solid $color_bg_secondary;
+  background-color: $color_bg_main;
+  width: 80%;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 1.5rem;
+  text-align: left;
+  margin-bottom: 2rem;
+  @media (min-width: 720px) {
+    flex-direction: row;
+  }
+
+  .account-content-wrapper {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 720px) {
+      text-align: left;
+    }
+
+    .transaction-button {
+      padding: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      border-color: $color_primary;
+      background-color: $color_primary;
+      color: $color_text_white;
+      width: 100%;
+
+      @media (min-width: 720px) {
+        width: 200px;
+      }
+    }
+  }
+  .cta {
+    @media (min-width: 720px) {
+      text-align: right;
+    }
+  }
+  .account-amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+}

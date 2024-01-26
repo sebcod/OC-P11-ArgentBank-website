@@ -3,9 +3,25 @@ main {
     text-align: center;
     flex: 1;
     background-color: $color_bg_secondary;
-    @include flex-column-center;
-    p {
-      color: $color_text_white;
+
+    .header {
+      margin-bottom: 2rem;
+
+      h2 {
+        color: $color_text_white;
+        font-size: 2rem;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        font-weight: bold;
+      }
+
+      .edit-button {
+        border-color: $color_primary;
+        background-color: $color_primary;
+        color: $color_text_white;
+        font-weight: bold;
+        padding: 10px;
+      }
     }
   }
 }
