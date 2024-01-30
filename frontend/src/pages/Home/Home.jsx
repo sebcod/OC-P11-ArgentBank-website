@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import FeatureItem from "../../components/FeatureItem/FeatureItem";
-import Header from "../../containers/Header/Header";
-import Main from "../../containers/Main/Main";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -40,29 +38,24 @@ const Home = () => {
     }
   }, [navigate]);
   return (
-    <>
-      <Header />
-      <Main>
-        <div className="hero">
-          <section className="hero-content">
-            <h2 className="sr-only">Promoted Content</h2>
-            <p className="subtitle">No fees.</p>
-            <p className="subtitle">No minimum deposit.</p>
-            <p className="subtitle">High interest rates.</p>
-            <p className="text">
-              Open a savings account with Argent Bank today!
-            </p>
-          </section>
-        </div>
-
-        <section className="features">
-          <h2 className="sr-only">Features</h2>
-          {featureItems?.map((item, index) => (
-            <FeatureItem key={index} item={item} />
-          ))}
+    <div className="containerMainHome">
+      <div className="hero">
+        <section className="hero-content">
+          <h2 className="sr-only">Promoted Content</h2>
+          <p className="subtitle">No fees.</p>
+          <p className="subtitle">No minimum deposit.</p>
+          <p className="subtitle">High interest rates.</p>
+          <p className="text">Open a savings account with Argent Bank today!</p>
         </section>
-      </Main>
-    </>
+      </div>
+
+      <section className="features">
+        <h2 className="sr-only">Features</h2>
+        {featureItems?.map((item, index) => (
+          <FeatureItem key={index} item={item} />
+        ))}
+      </section>
+    </div>
   );
 };
 

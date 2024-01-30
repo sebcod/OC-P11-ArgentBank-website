@@ -1,21 +1,19 @@
-main {
-  .containerMainNotFound {
-    text-align: center;
-    flex: 1;
-    background-color: $color_bg_secondary;
+.containerMainNotFound {
+  text-align: center;
+  flex: 1;
+  background-color: $color_bg_secondary;
 
-    @include flex-column-center;
-    p {
-      color: $color_text_white;
-      font-size: 5rem;
-      margin-bottom: 2rem;
-    }
-    span {
-      color: $color_text_white;
-      font-size: 2rem;
-      &:hover {
-        color: $color_primary;
-      }
+  @include flex-column-center;
+  p {
+    color: $color_text_white;
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+  span {
+    color: $color_text_white;
+    font-size: 2rem;
+    &:hover {
+      color: $color_primary;
     }
   }
 }

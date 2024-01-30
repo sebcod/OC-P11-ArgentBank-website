@@ -3,7 +3,7 @@ header {
   @include flex-between;
   padding: 0.2rem 1.1rem;
 
-  @media only screen and (max-width: 319px) {
+  @media only screen and (max-width: 420px) {
     @include flex-column-center;
     padding-bottom: 1rem;
   }

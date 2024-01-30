@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../../containers/Header/Header";
-import Main from "../../containers/Main/Main";
 
 const Login = () => {
   const navigate = useNavigate();
-
   const [setUserEmail, setUserEmailsetUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [remenberMe, setRememberMe] = useState(false);
@@ -65,54 +62,41 @@ const Login = () => {
   }, [navigate]);
 
   return (
-    <>
-      <Header />
-      <Main>
-        <div className="containerMainSignIn">
-          <section className="sign-in-content">
-            <img
-              src="../src/svgs/user-circle-solid.svg"
-              width={16}
-              height={16}
+    <div className="containerMainSignIn">
+      <section className="sign-in-content">
+        <img src="../src/svgs/user-circle-solid.svg" width={16} height={16} />
+        <h2>Log In</h2>
+        {showError && (
+          <p className="errorLogin">
+            Either your email or password is incorrect.
+          </p>
+        )}
+        <form onSubmit={handleSubmit}>
+          <div className="input-wrapper">
+            <label htmlFor="email">Email</label>
+            <input
+              onChange={onchangeName}
+              type="email"
+              id="email"
+              // autoComplete="off"
             />
-            <h2>Log In</h2>
-            {showError && (
-              <p className="errorLogin">
-                Either your email or password is incorrect.
-              </p>
-            )}
-            <form onSubmit={handleSubmit}>
-              <div className="input-wrapper">
-                <label htmlFor="email">Email</label>
-                <input
-                  onChange={onchangeName}
-                  type="email"
-                  id="email"
-                  // autoComplete="off"
-                />
-              </div>
-              <div className="input-wrapper">
-                <label htmlFor="password">Password</label>
-                <input
-                  onChange={onchangePassword}
-                  type="password"
-                  id="password"
-                />
-              </div>
-              <div className="input-remember">
-                <input
-                  onChange={onchangeRememberMe}
-                  type="checkbox"
-                  id="remember-me"
-                />
-                <label htmlFor="remember-me">Remember me</label>
-              </div>
-              <input className="sign-in-button" type="submit" value="Log In" />
-            </form>
-          </section>
-        </div>
-      </Main>
-    </>
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="password">Password</label>
+            <input onChange={onchangePassword} type="password" id="password" />
+          </div>
+          <div className="input-remember">
+            <input
+              onChange={onchangeRememberMe}
+              type="checkbox"
+              id="remember-me"
+            />
+            <label htmlFor="remember-me">Remember me</label>
+          </div>
+          <input className="sign-in-button" type="submit" value="Log In" />
+        </form>
+      </section>
+    </div>
   );
 };
 

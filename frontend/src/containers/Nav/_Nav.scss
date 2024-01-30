@@ -3,20 +3,24 @@ nav {
   margin-right: 0.65rem;
   ul {
     display: flex;
+    gap: 1rem;
     li {
+      @include flex-center;
       font-weight: bold;
       span {
         margin-left: 0.3rem;
       }
-      &:hover {
-        text-decoration: underline;
-      }
+
       a {
         @include flex-center;
         img {
           position: relative;
           bottom: 1px;
         }
+      }
+      &.link:hover {
+        text-decoration: underline;
+        cursor: pointer;
       }
     }
   }
