@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import Home from "./Home";
 
 describe("When Home is created", () => {
-  it("header, main is displayed", async () => {
+  it("Main is displayed", async () => {
     const { container } = render(
       <BrowserRouter>
         <Home />

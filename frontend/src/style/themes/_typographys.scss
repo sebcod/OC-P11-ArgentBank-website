@@ -9,7 +9,9 @@ h6,
 p,
 span,
 label,
-input {
+input,
+input::placeholder,
+button {
   font-family: $Font_text;
   color: $color_text_noir;
 }

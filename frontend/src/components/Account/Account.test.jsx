@@ -16,6 +16,9 @@ describe("When account is created", () => {
       </BrowserRouter>
     );
 
+    screen.getByText(/Argent/i);
+    screen.getByText(/2,082/i);
+    screen.getByText(/Available Balance/i);
     screen.getByText(/View transactions/i);
   });
 });

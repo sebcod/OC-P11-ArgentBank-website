@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Account from "../../components/Account/Account";
+import FormEditUserName from "../../components/FormEditUserName/FormEditUserName";
 import { updateUserData } from "../../store/user/userSlice";
 
 const accountData = [
@@ -26,6 +27,11 @@ const Profile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userData = useSelector((store) => store.USER.userData);
+  const [showEditUserName, setShowEditUserName] = useState(false);
+
+  const handleEditUserName = () => {
+    setShowEditUserName(true);
+  };
 
   useEffect(() => {
     const getUserData = async (tokenJWT) => {
@@ -54,7 +60,7 @@ const Profile = () => {
         localStorage.getItem("argentbank")
       )
     ) {
-      navigate("/login");
+      navigate("/");
     } else {
       sessionStorage.getItem("argentbank")
         ? getUserData(sessionStorage.getItem("argentbank"))
@@ -65,12 +71,21 @@ const Profile = () => {
   return (
     <div className="containerMainProfile">
       <div className="header">
-        <h2>
-          Welcome back
-          <br />
-          {userData.userName} !
-        </h2>
-        <button className="edit-button">Edit Name</button>
+        {!showEditUserName && (
+          <>
+            <h2>
+              Welcome back
+              <br />
+              {userData.userName} !
+            </h2>
+            <button onClick={handleEditUserName} className="edit-button">
+              Edit Name
+            </button>
+          </>
+        )}
+        {showEditUserName && (
+          <FormEditUserName setShowEditUserName={setShowEditUserName} />
+        )}
       </div>
       <h3 className="sr-only">Accounts</h3>
       {accountData?.map((account, index) => (

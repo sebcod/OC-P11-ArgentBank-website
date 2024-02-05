@@ -4,7 +4,7 @@ import { describe, it } from "vitest";
 import NotFound from "./NotFound";
 
 describe("When Notfound page is created", () => {
-  it("header, main is displayed", async () => {
+  it("Main is displayed", async () => {
     render(
       <BrowserRouter>
         <NotFound />
