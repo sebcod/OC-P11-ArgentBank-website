@@ -3,6 +3,14 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateStoreUserName } from "../../store/user/userSlice";
 
+/*
+  Edit username form display
+    Get user data from the store
+    Display placeholder from user data
+    Put new username with JWT
+    Dispatch updateStoreUserName with new UserName
+*/
+
 const FormEditUserName = ({ setShowEditUserName }) => {
   FormEditUserName.propTypes = {
     setShowEditUserName: PropTypes.PropTypes.func.isRequired,
@@ -31,7 +39,6 @@ const FormEditUserName = ({ setShowEditUserName }) => {
 
   const updateUserName = async (tokenJWT) => {
     try {
-      console.log(tokenJWT);
       await fetch("http://localhost:3001/api/v1/user/profile", {
         method: "PUT",
         headers: {

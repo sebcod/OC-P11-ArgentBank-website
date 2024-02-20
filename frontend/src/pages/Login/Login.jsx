@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+/*
+  Display form login page
+    POST body: email, password => response: JWT
+    remenberMe = false ? JWT => sessionStorage 
+    remenberMe = true ? JWT => localStorage
+    navigate("/profile")
+*/
+
 const Login = () => {
   const navigate = useNavigate();
   const [setUserEmail, setUserEmailsetUserEmail] = useState("");
@@ -35,19 +43,15 @@ const Login = () => {
         .then((res) => res.json())
         .then((res_json) => {
           if (res_json.body.token) {
-            // stockage du token JWT dans localStorage si rememberMe true, ou sessionStorage si false.
             remenberMe === false
               ? sessionStorage.setItem("argentbank", res_json.body.token)
               : localStorage.setItem("argentbank", res_json.body.token);
-            // redirection sur la page user
             navigate("/profile");
           } else {
-            // si pas de token, affichage d'un message d'erreur
             setShowError(true);
           }
         });
     } catch {
-      // si erreur, affichage d'un message d'erreur
       setShowError(true);
     }
   };

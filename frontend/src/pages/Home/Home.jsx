@@ -2,6 +2,11 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import FeatureItem from "../../components/FeatureItem/FeatureItem";
 
+/*
+  Display Home page
+    if JWT, sessionStorage || localStorage, navigate("/profile")
+*/
+
 const Home = () => {
   const navigate = useNavigate();
 

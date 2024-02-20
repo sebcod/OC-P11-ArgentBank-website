@@ -2,6 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { disconnectUser } from "../../store/user/userSlice";
 
+/*
+  Display navbar
+    Get userStatus and userData from store
+      connected && display: username and logout
+      !connected && display: login link
+*/
+
 const Nav = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

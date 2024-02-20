@@ -23,6 +23,16 @@ const accountData = [
   },
 ];
 
+/*
+  Display profile page
+    if !JWT => navigate("/")
+    else
+      Get userData with JWT
+      dispatch updateUserData with userData
+    display handleEditUserName button
+    display accounts placeholder
+*/
+
 const Profile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();

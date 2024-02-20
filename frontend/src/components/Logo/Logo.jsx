@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
+/*
+  Changing the logo link if the user is logged in
+*/
+
 const Logo = () => {
   const [isJWT, setIsJWT] = useState(false);
 

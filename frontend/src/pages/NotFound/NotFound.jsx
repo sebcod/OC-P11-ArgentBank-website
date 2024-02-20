@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
+/*
+  Display Notfound page
+    if JWT => navigate("/profile")
+*/
+
 const NotFound = () => {
   const navigate = useNavigate();
   useEffect(() => {

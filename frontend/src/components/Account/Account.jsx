@@ -1,5 +1,9 @@
 import PropTypes from "prop-types";
 
+/*
+  Display account information
+*/
+
 const Account = ({ account }) => {
   Account.propTypes = {
     account: PropTypes.object,

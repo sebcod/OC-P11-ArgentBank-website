@@ -1,5 +1,9 @@
 import PropTypes from "prop-types";
 
+/*
+  Display Feature Item
+*/
+
 const FeatureItem = ({ item }) => {
   FeatureItem.propTypes = {
     item: PropTypes.object,
